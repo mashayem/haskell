@@ -1,6 +1,6 @@
 module Main where
 
-import Lab1 (lab1)
+import Lab1_1 (lab1)
 import Lab1_2 (minim)
 import Lab2_1 (findNextToLast, findNextToLasMaybe, myButLast)
 import Lab2_2 (insert, insertAtN, insertZip)
