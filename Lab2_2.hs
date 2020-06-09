@@ -4,9 +4,14 @@ module Lab2_2 where
 --значенні 'z': "1234590"=>"1z3z5z0".
 
 changeList :: [Int] -> Int -> Int -> [Int]
-changeList n z replacement = changeListIndexed n z replacement 0
+changeList list n z = do
+  let zipped = zip list [1..]
+  map (\(el, pos) -> if mod pos n == 0 then z else el) zipped
 
-changeListIndexed :: [Int] -> Int -> Int -> 0 -> [Int]
-changeListIndexed (head:tail) n z index
-  | mod index n == 0 = [z] ++ changeListIndexed tail n z index+1
-  | otherwise = [head] ++ changeListIndexed tail n z index+1
+--process :: (Int, Int) -> Int -> Int -> Int
+--process (element, position) n z = if mod position n == 0 then z else element
+--  | mod position n == 0 = z
+--  | otherwise = element
+
+--changeList' :: [(Int, Int)] -> Int -> Int -> [Int]
+--changeList' (x:xs) n z = [process x] ++ (changeList' xs n z)
